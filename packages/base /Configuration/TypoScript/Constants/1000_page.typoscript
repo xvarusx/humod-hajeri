@@ -1,0 +1,43 @@
+############
+### PAGE ###
+############
+page {
+    fluidtemplate {
+        layoutRootPath = EXT:base/Resources/Private/Layouts/
+        partialRootPath = EXT:base/Resources/Private/Partials/
+        templateRootPath = EXT:base/Resources/Private/Templates/
+    }
+    
+    uid {
+        headerNavigation = 1
+        infoNavigation = 14 
+        #18
+        downloadNavigation = 19
+        #20
+        footernavigation = 8
+        footerContent = 10
+        #25
+        socialMediaNavigation = 7
+    }
+
+    meta {
+        description = 
+        author =
+        keywords =
+        viewport = 
+        robots = index,follow
+        apple-mobile-web-app-capable = no
+        compatible = IE=edge
+    }
+}
+
+##############################
+#### FLUID STYLED CONTENT ####
+##############################
+styles {
+    templates {
+        layoutRootPath = EXT:base/Resources/Private/Layouts/
+        partialRootPath = EXT:base/Resources/Private/Partials/
+        templateRootPath = EXT:base/Resources/Private/Templates/
+    }
+}

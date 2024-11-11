@@ -1,0 +1,8 @@
+# cat=ke_search/file; type=string; label= ke_search template path: This is the path to the templates.
+plugin.tx_kesearch.templateRootPath = EXT:base/Resources/Private/Templates/Ke_search/
+
+# cat=ke_search/file; type=string; label= ke_search partial path: This is the path to the partials.
+plugin.tx_kesearch.partialRootPath = EXT:base/Resources/Private/Partials/Ke_search/
+
+# cat=ke_search/file; type=string; label= ke_search layout path: This is the path to the layouts.
+plugin.tx_kesearch.layoutRootPath = EXT:base/Resources/Private/Layouts/Ke_search/

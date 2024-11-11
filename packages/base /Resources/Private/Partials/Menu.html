@@ -1,0 +1,47 @@
+<f:comment>
+    <nav class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+        <ul>
+            <f:for each="{mainnavigation}" as="mainnavigationItem">
+                <li class="{f:if(condition: mainnavigationItem.active, then:'active')}">
+                    <a href="{mainnavigationItem.link}" target="{mainnavigationItem.target}" title="{mainnavigationItem.title}">
+                        {mainnavigationItem.title}
+                    </a>
+                    <f:if condition="{mainnavigationItem.children}">
+                        <ul>
+                            <f:for each="{mainnavigationItem.children}" as="child">
+                                <li class="{f:if(condition: child.active, then:'active')}">
+                                    <a href="{child.link}" target="{child.target}" title="{child.title}">
+                                        {child.title}
+                                    </a>
+                                </li>
+                            </f:for>
+                        </ul>
+                    </f:if>
+                </li>
+            </f:for>
+        </ul>
+    </nav>
+    
+</f:comment>
+<div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+    <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="assets/img/logo.png" alt=""> -->
+      <h1 class="sitename">آل حمود
+        الهاجري</h1>
+    </a>
+    <nav id="navmenu" class="navmenu">
+        <ul>
+        <f:for each="{mainnavigation}" as="mainnavigationItem">
+        <li> <a href="{mainnavigationItem.link}" class="{f:if(condition: mainnavigationItem.active, then:'active')}"target="{mainnavigationItem.target}" title="{mainnavigationItem.title}">
+            {mainnavigationItem.title}
+        </a></li>
+        </f:for>
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
+
+    <a class="btn-getstarted" href="index.html#about">Get Started</a>
+
+  </div>

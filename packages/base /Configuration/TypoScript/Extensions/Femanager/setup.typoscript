@@ -1,0 +1,4 @@
+###################
+#### FEMANAGER ####
+###################
+@import 'EXT:femanager/Configuration/TypoScript/Main/setup.typoscript'

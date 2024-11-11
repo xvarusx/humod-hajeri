@@ -1,0 +1,24 @@
+########################
+#### FORM FRAMEWORK ####
+########################
+@import 'EXT:form/Configuration/TypoScript/setup.typoscript'
+plugin.tx_form {
+    view {
+        templateRootPaths.200 = EXT:base/Resources/Private/Templates/Form/
+        partialRootPaths.200 = EXT:base/Resources/Private/Partials/Form/
+        layoutRootPaths.200 = EXT:base/Resources/Private/Layouts/Forms/
+    }
+    settings {
+        yamlConfigurations {
+            200 = EXT:base/Configuration/Yaml/CustomFormSetup.yaml
+        }
+    }
+}
+
+module.tx_form {
+    settings {
+        yamlConfigurations {
+            200 = EXT:base/Configuration/Yaml/CustomFormSetup.yaml
+        }
+    }
+}

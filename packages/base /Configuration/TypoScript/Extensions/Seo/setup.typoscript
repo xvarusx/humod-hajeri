@@ -1,0 +1,44 @@
+#------------------------------
+# sitemap
+#------------------------------
+@import 'EXT:seo/Configuration/TypoScript/XmlSitemap/setup.typoscript'
+
+plugin.tx_seo {
+    config {
+        xmlSitemap {
+            sitemaps {
+                pages {
+                    provider = TYPO3\CMS\Seo\XmlSitemap\PagesXmlSitemapDataProvider
+                    config {
+                        excludedDoktypes = 3, 4, 6, 7, 199, 254, 255
+                        additionalWhere = no_index = 0
+                    }
+                }
+                news {
+                    provider = TYPO3\CMS\Seo\XmlSitemap\RecordsXmlSitemapDataProvider
+                    config {
+                        table = tx_news_domain_model_news
+                        additionalWhere =
+                        sortField = sorting
+                        lastModifiedField = tstamp
+                        changeFreqField = sitemap_changefreq
+                        priorityField = sitemap_priority
+                        pid = 44
+                        recursive = 2
+                        url {
+                            pageId = 57
+                            fieldToParameterMap {
+                                uid = tx_news_pi1[news]
+                            }
+
+                            additionalGetParameters {
+                                tx_news_pi1.controller = News
+                                tx_news_pi1.action = detail
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

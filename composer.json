@@ -1,0 +1,71 @@
+{
+	"name": "typo3/cms-base-distribution",
+	"description" : "TYPO3 CMS Base Distribution",
+	"license": "GPL-2.0-or-later",
+	"type": "project",
+	"config": {
+		"allow-plugins": {
+			"typo3/class-alias-loader": true,
+			"typo3/cms-composer-installers": true
+		},
+		"platform": {
+			"php": "8.1.1"
+		},
+		"sort-packages": true
+	},
+	"repositories": [
+		{
+		  "type": "path",
+		  "url": "packages/*",
+		  "canonical": false
+		}
+	  ],
+	  "scripts":{
+		"typo3-cms-scripts": [
+		  "typo3 install:extensionsetupifpossible",
+		  "typo3 install:fixfolderstructure"
+		]
+	  },
+	"require": {
+		"fluidtypo3/vhs": "^7.0",
+		"georgringer/news": "^11.4",
+		"in2code/femanager": "^8.2",
+		"in2code/powermail": "^12.4",
+		"internetgalerie/ig-slug": "^1.1",
+		"mask/mask": "^8.3",
+		"nitsan/ns-news-comments": "^12.2",
+		"oussema/base": "@dev",
+		"sypets/brofix": "^6.2",
+		"tpwd/ke_search": "^6.0",
+		"typo3/cms-backend": "^12.4.0",
+		"typo3/cms-belog": "^12.4.0",
+		"typo3/cms-beuser": "^12.4.0",
+		"typo3/cms-core": "^12.4.0",
+		"typo3/cms-dashboard": "^12.4.0",
+		"typo3/cms-extbase": "^12.4.0",
+		"typo3/cms-extensionmanager": "^12.4.0",
+		"typo3/cms-felogin": "^12.4.0",
+		"typo3/cms-filelist": "^12.4.0",
+		"typo3/cms-fluid": "^12.4.0",
+		"typo3/cms-fluid-styled-content": "^12.4.0",
+		"typo3/cms-form": "^12.4.0",
+		"typo3/cms-frontend": "^12.4.0",
+		"typo3/cms-impexp": "^12.4.0",
+		"typo3/cms-info": "^12.4.0",
+		"typo3/cms-install": "^12.4.0",
+		"typo3/cms-reactions": "^12.4.0",
+		"typo3/cms-rte-ckeditor": "^12.4.0",
+		"typo3/cms-seo": "^12.4.0",
+		"typo3/cms-setup": "^12.4.0",
+		"typo3/cms-sys-note": "^12.4.0",
+		"typo3/cms-t3editor": "^12.4.0",
+		"typo3/cms-tstemplate": "^12.4.0",
+		"typo3/cms-viewpage": "^12.4.0",
+		"typo3/cms-webhooks": "^12.4.0",
+		"yoast-seo-for-typo3/yoast_seo": "^10.0"
+	},
+	"extra": {
+		"enable-patching": true,
+		"patches": {}
+	  }
+}

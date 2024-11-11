@@ -1,0 +1,34 @@
+#####################
+#### OVERWRITING ####
+#####################
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:base/Configuration/TypoScript/ContentElements/" extensions="typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:base/Configuration/TypoScript/Extensions/FluidStyledContent/setup.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:base/Configuration/TypoScript/Extensions/Base/setup.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:base/Configuration/TypoScript/Extensions/Form/setup.typoscript" >
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:base/Configuration/TypoScript/Extensions/Seo/setup.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:base/Configuration/TypoScript/Extensions/News/setup.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:base/Configuration/TypoScript/Extensions/Felogin/setup.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:base/Configuration/TypoScript/Extensions/Femanager/setup.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:base/Configuration/TypoScript/Extensions/Ke_search/setup.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:base/Configuration/TypoScript/Extensions/Yoast_Seo/setup.typoscript">
+
+################
+#### HELPER ####
+################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:base/Configuration/TypoScript/Helper/DynamicContent.typoscript">
+
+
+##############
+#### CONFIG ##
+##############
+@import 'EXT:base/Configuration/TypoScript/Page/config.typoscript'
+
+##############
+#### PAGE ####
+##############
+@import 'EXT:base/Configuration/TypoScript/Page/page.typoscript'
+
+##############
+#### LIB #####
+##############
+@import 'EXT:base/Configuration/TypoScript/Page/lib.typoscript'

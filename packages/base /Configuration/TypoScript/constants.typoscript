@@ -1,0 +1,13 @@
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:base/Configuration/TypoScript/Constants" extensions="typoscript">
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:base/Configuration/TypoScript/Extensions/FluidStyledContent/constants.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:base/Configuration/TypoScript/Extensions/Seo/constants.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:base/Configuration/TypoScript/Extensions/News/constants.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:base/Configuration/TypoScript/Extensions/Ke_search/constants.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:base/Configuration/TypoScript/Extensions/Felogin/constants.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:base/Configuration/TypoScript/Extensions/Femanager/constants.typoscript">
+
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/constants.typoscript">

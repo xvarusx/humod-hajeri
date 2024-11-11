@@ -1,0 +1,12 @@
+// ########################
+// #### News Extension ####
+// ########################
+@import 'EXT:news/Configuration/TypoScript/constants.txt'
+
+plugin.tx_news {
+    view {
+        templateRootPath = EXT:base/Resources/Private/Templates/News/
+        partialRootPath = EXT:base/Resources/Private/Partials/News/
+        layoutRootPath = EXT:base/Resources/Private/Layouts/News/
+    }
+}

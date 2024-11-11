@@ -1,0 +1,15 @@
+plugin.tx_base {
+    settings {
+        pageUids {
+
+        }
+
+        header{
+
+        }
+
+        footer {
+
+        }
+    }
+}

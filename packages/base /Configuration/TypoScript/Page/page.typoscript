@@ -1,0 +1,230 @@
+##############
+#### PAGE ####
+##############
+page = PAGE
+page {
+    typeNum = 0
+    shortcutIcon = EXT:base/Resources/Public/Icons/favicon.ico
+
+    10 = FLUIDTEMPLATE
+    10 {
+        # Template names will be generated automatically by converting the applied
+        # backend_layout, there is no explicit mapping necessary anymore.
+        #
+        # BackendLayout Key
+        # subnavigation_right_2_columns -> SubnavigationRight2Columns.html
+        #
+        # Backend Record
+        # uid: 1 -> 1.html
+        #
+        # Database Entry
+        # value: -1 -> None.html
+        # value: pagets__subnavigation_right_2_columns -> SubnavigationRight2Columns.html
+        templateName = TEXT
+        templateName {
+            cObject = TEXT
+            cObject {
+                data = pagelayout
+                required = 1
+                case = uppercamelcase
+                split {
+                    token = pagets__
+                    cObjNum = 1
+                    1.current = 1
+                }
+            }
+            ifEmpty = Default
+        }
+        templateRootPaths {
+            0 = EXT:base/Resources/Private/Templates/
+            1 = {$page.fluidtemplate.templateRootPath}
+        }
+        partialRootPaths {
+            0 = EXT:base/Resources/Private/Partials/
+            1 = {$page.fluidtemplate.partialRootPath}
+        }
+        layoutRootPaths {
+            0 = EXT:base/Resources/Private/Layouts/
+            1 = {$page.fluidtemplate.layoutRootPath}
+        }
+        dataProcessing {
+
+            10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            10 {
+                special = directory
+                special.value = {$page.uid.headerNavigation}
+                levels = 2
+                includeSpacer = 1
+                as = mainnavigation
+            }
+
+            20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            20 {
+                special = directory
+                special.value = {$page.uid.footernavigation}
+                levels = 1
+                includeSpacer = 1
+                as = footernavigation
+            }
+            30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            30 {
+                special = directory
+                special.value = 8
+                levels = 1
+                includeSpacer = 1
+                as = menufooter
+                titleField = nav_title // title
+            }
+            ##############################
+            # MENU SOCIAL MEDIA
+            ##############################
+            40 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            40 {
+                special = directory
+                special.value = 3
+                levels = 1
+                includeSpacer = 0
+                as = menusocialmedia
+                titleField = nav_title // title
+            }
+        }
+
+        variables {
+            zero = COA
+            zero {
+                20 < styles.content.get
+                20.select.where = {#colPos}=0
+                20.select.languageField = sys_language_uid
+                wrap = <!--TYPO3SEARCH_begin-->|<!--TYPO3SEARCH_end-->
+            }
+            one = COA
+            one {
+                20 < styles.content.get
+                20.select.where = {#colPos}=1
+                20.select.languageField = sys_language_uid
+                wrap = <!--TYPO3SEARCH_begin-->|<!--TYPO3SEARCH_end-->
+            }
+        }
+    }
+
+
+
+    meta {
+        viewport = width=device-width, initial-scale=1
+        robots = {$page.meta.robots}
+        apple-mobile-web-app-capable = {$page.meta.apple-mobile-web-app-capable}
+        description = {$page.meta.description}
+        description {
+            override.field = description
+        }
+        author = {$page.meta.author}
+        author {
+            override.field = author
+        }
+        keywords = {$page.meta.keywords}
+        keywords {
+            override.field = keywords
+        }
+        X-UA-Compatible = {$page.meta.compatible}
+        X-UA-Compatible {
+            attribute = http-equiv
+        }
+
+        # OpenGraph Tags
+        og:title {
+            attribute = property
+            field = title
+        }
+        og:site_name {
+            attribute = property
+            data = TSFE:tmpl|setup|sitetitle
+        }
+        og:description = {$page.meta.description}
+        og:description {
+            attribute = property
+            field = description
+        }
+        og:image {
+            attribute = property
+            stdWrap.cObject = FILES
+            stdWrap.cObject {
+                references {
+                    data = levelfield:-1, media, slide
+                }
+                maxItems = 1
+                renderObj = COA
+                renderObj {
+                    10 = IMG_RESOURCE
+                    10 {
+                        file {
+                            import.data = file:current:uid
+                            treatIdAsReference = 1
+                            width = 1280c
+                            height = 720c
+                        }
+                        stdWrap {
+                            typolink {
+                                parameter.data = TSFE:lastImgResourceInfo|3
+                                returnLast = url
+                                forceAbsoluteUrl = 1
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    includeCSSLibs {
+
+    }
+
+    includeJSLibs {
+
+    }
+
+    includeJSFooterlibs {
+
+    }
+    includeCSS {
+        main = EXT:base/Resources/Public/vendor/css/main.css
+        main {
+            media = all
+            excludeFromConcatenation = 0
+            disableCompression = 0
+        }
+        additional = EXT:base/Resources/Public/Css/additional.css
+        additional {
+            media = all
+            excludeFromConcatenation = 0
+            disableCompression = 0
+        }
+        bootstrap = EXT:base/Resources/Public/vendor/css/bootstrap.min.css
+        bootstrap {
+            media = all
+            excludeFromConcatenation = 0
+            disableCompression = 0
+        }
+    }
+
+
+    includeJSFooter {
+        main = EXT:base/Resources/Public/vendor/js/main.js
+        main {
+            media = all
+            excludeFromConcatenation = 0
+            disableCompression = 0
+        }
+        script = EXT:base/Resources/Public/JavaScript/additional.js
+        script {
+            excludeFromConcatenation = 0
+            disableCompression = 1
+        }
+        bootstrap = EXT:base/Resources/Public/vendor/css/bootstrap.min.css
+        bootstrap {
+            excludeFromConcatenation = 0
+            disableCompression = 1
+        }
+    }
+
+}

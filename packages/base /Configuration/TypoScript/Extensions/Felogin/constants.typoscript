@@ -1,0 +1,12 @@
+#################
+#### FELOGIN ####
+#################
+@import 'EXT:felogin/Configuration/TypoScript/constants.typoscript'
+
+plugin.tx_news {
+  view {
+    templateRootPath = EXT:base/Resources/Private/Templates/Extensions/Felogin/
+    partialRootPath = EXT:base/Resources/Private/Partials/Extensions/Felogin/
+    layoutRootPath = EXT:base/Resources/Private/Layouts/Extensions/Felogin/
+  }
+}

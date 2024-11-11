@@ -1,0 +1,28 @@
+########################
+#### News Extension ####
+########################
+@import 'EXT:news/Configuration/TypoScript/setup.txt'
+
+plugin.tx_news {
+    view {
+        templateRootPaths {
+            0 = EXT:news/Resources/Private/Templates/
+            1 = {$plugin.tx_news.view.templateRootPath}
+        }
+        partialRootPaths {
+            0 = EXT:news/Resources/Private/Partials/
+            1 = {$plugin.tx_news.view.partialRootPath}
+        }
+        layoutRootPaths {
+            0 = EXT:news/Resources/Private/Layouts/
+            1 = {$plugin.tx_news.view.layoutRootPath}
+        }
+    }
+
+}
+lib.tx_news.contentElementRendering = RECORDS
+lib.tx_news.contentElementRendering {
+	tables = tt_content
+	source.current = 1
+	dontCheckPid = 1
+}
